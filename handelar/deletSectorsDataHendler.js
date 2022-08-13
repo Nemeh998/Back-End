@@ -19,9 +19,9 @@ console.log(data)
         } else{
 
 
-            data.findOne(mainSector,(error,data)=>{
-                console.log(data)
-            })
+            // data.findOne(mainSector,(error,data)=>{
+            //     console.log(data)
+            // })
          //62f22dfd576a22d20767bb60=sectorid
                 // item.findByIdAndRemove({_id:sectorid}, function(error, data) {
                 //     console.log(data)

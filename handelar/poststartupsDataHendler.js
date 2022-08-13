@@ -8,7 +8,7 @@ const {mainsectorModel, admainModel} = require('../Models/Schemh')
     console.log("data",req.body)
 console.log("data",req.query)
 
-let { mainSectorName,LogoImage,city,emailAddres,founderName,numberOfEmployees,startupName,websiteURL,yearOfEstablishment,Sectors}=req.body
+let { mainSectorName,subDesignColor,addsubSectorname,subSectorLogo}=req.body
 
 
 let a= mainsectorModel.findById(mainSectorName)
