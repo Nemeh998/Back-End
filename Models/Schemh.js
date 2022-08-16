@@ -17,7 +17,7 @@ const startupsSchema = new mongoose.Schema({
     city: String,
     founderName: String,
     numberOfEmployees: Number,
-    yearOfEstablishment: Number,
+    yearOfEstablishment: String,
     websiteURL: String,
     emailAddress: String
 })
@@ -25,7 +25,7 @@ const sectorsSchema = new mongoose.Schema({
     subSectorname: String,
     subSectorLogo: String,
     subDesignColor: String,
-    subParentCategoryName: String,
+    // subParentCategoryName: String,
     startup: [startupsSchema],
 })
 

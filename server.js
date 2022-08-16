@@ -69,15 +69,6 @@ function seedadminuser() {
                     yearOfEstablishment: 1,
                     websiteURL: 'new2',
                     emailAddress: 'new2'
-                }, {
-                    startupName: 'new2',
-                    LogoImage: 'new2',
-                    city: 'new2',
-                    founderName: 'new2',
-                    numberOfEmployees: 1,
-                    yearOfEstablishment: 1,
-                    websiteURL: 'new2',
-                    emailAddress: 'new2'
                 }],
             }
         ]
