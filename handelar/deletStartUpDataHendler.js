@@ -18,7 +18,7 @@ const {mainsectorModel, admainModel} = require('../Models/Schemh')
 data.sectors.map(sectoritem=>{
     if(sectoritem._id.toString()===sectorid){
         console.log(sectoritem)
-        sectoritem.startup.splice(sectorid,1)
+        sectoritem.startup.splice(startupid,1)
         data.save()
         res.send(sectoritem.startup)
     }

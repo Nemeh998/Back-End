@@ -22,7 +22,9 @@ const deletSectorsDataHendler = require('./handelar/deletSectorsDataHendler')
 server.delete("/deletSectorsDataHendler", deletSectorsDataHendler)
 const deletStartUpDataHendler=require('./handelar/deletStartUpDataHendler')
 server.delete("/deletStartUpDataHendler",deletStartUpDataHendler)
-// ================================================
+const updateStartupdata=require('./handelar/updateStartupdata')
+server.put("/updateStartupdata",updateStartupdata)
+// ===============================================
 // Schema
 const {mainsectorModel, admainModel} = require('./Models/Schemh')
 
@@ -40,7 +42,7 @@ function seedadminuser() {
         mainSectorName: 'JORDAN MAP',
         sectors: [
             {
-                subSectorname: "data",
+                subSectorname: "pime",
                 subSectorLogo: "data",
                 subDesignColor: "data",
                 subParentCategoryName: "data",
@@ -55,22 +57,7 @@ function seedadminuser() {
                     emailAddress: 'data2'
                 }]
             },
-            {
-                subSectorname: "newcompany",
-                subSectorLogo: "newcompany",
-                subDesignColor: "newcompany",
-                subParentCategoryName: "newcompany",
-                startup: [{
-                    startupName: 'new2',
-                    LogoImage: 'new2',
-                    city: 'new2',
-                    founderName: 'new2',
-                    numberOfEmployees: 1,
-                    yearOfEstablishment: 1,
-                    websiteURL: 'new2',
-                    emailAddress: 'new2'
-                }],
-            }
+          
         ]
 
     })
