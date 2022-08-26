@@ -24,6 +24,8 @@ const deletStartUpDataHendler=require('./handelar/deletStartUpDataHendler')
 server.delete("/deletStartUpDataHendler",deletStartUpDataHendler)
 const updateStartupdata=require('./handelar/updateStartupdata')
 server.put("/updateStartupdata",updateStartupdata)
+const getUserDataHendler=require('./handelar/getUserDataHendler')
+server.get('/getUserDataHendler',getUserDataHendler)
 // ===============================================
 // Schema
 const {mainsectorModel, admainModel} = require('./Models/Schemh')

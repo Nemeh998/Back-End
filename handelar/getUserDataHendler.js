@@ -1,5 +1,5 @@
 const {mainsectorAdmain,admainModel}=require('../Models/Schemh')
-function getEmailDataHendler (req,res){
+function getUserDataHendler (req,res){
     // find(object, callback function)
     let email1=req.query.mainSectorName1
     admainModel.find({email:email1},function(error,email){
@@ -9,10 +9,10 @@ function getEmailDataHendler (req,res){
         } else{
             console.log(email) 
     
-    res.send(mainsector[0])
+    res.send(email)
         }
 
 }
 )
 }
-module.exports=getDataHendler;
+module.exports=getUserDataHendler;
