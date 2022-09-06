@@ -19,7 +19,8 @@ const startupsSchema = new mongoose.Schema({
     numberOfEmployees: Number,
     yearOfEstablishment: String,
     websiteURL: String,
-    emailAddress: String
+    emailAddress: String,
+    approved: Boolean
 })
 const sectorsSchema = new mongoose.Schema({
     subSectorname: String,

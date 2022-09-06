@@ -31,42 +31,47 @@ mainsectorModel.findById(item1id,(err,data)=>{
 data.sectors.map(sectoritem=>{
 if(sectoritem._id.toString()===itemsectorsid){
     
-    sectoritem.startup.splice(itemstartupid,1,{   
-        startupName:startupName,
-            LogoImage:LogoImage,
-             city:city, 
-              founderName:founderName, 
-              numberOfEmployees:numberOfEmployees, 
-              yearOfEstablishment:yearOfEstablishment,
-               websiteURL:websiteURL,
-                emailAddress:emailAddress})
-        data.save()
-        res.send(sectoritem.startup)
-    }
+    sectoritem.startup.forEach((startup)=>{   
+
+        if(startup._id.toString() == itemstartupid){
+            startup.startupName=startupName,
+            startup.LogoImage=LogoImage,
+            startup.city=city, 
+            startup.founderName=founderName, 
+            startup.numberOfEmployees=numberOfEmployees, 
+            startup.yearOfEstablishment=yearOfEstablishment,
+            startup.websiteURL=websiteURL,
+            startup.emailAddress=emailAddress,
+            startup.approved= true
+    
+        
+            data.save()
+            res.send(sectoritem.startup)
+        }
+
+
+        })
     
    
  
-}
-)
-}
+    }
+    })
 
-    
+}
 
 }) 
 
 
   }
 module.exports=updateStartupdata;
-// if(error){
-//     res.send('cant find sectors')
-// }
-// else{
+// // Update Cat
+// function updateCat(req, res) {
+//     const id = req.params.id;
+//     const {data} = req.body;
 
-// if(Sectors)
-    // console.log(SectorsData,'befor save Data')
-    
-//         SectorsData[0].Sectors
-//          SectorsData[0].save();
-//         res.send(SectorsData[0].Sectors)
-//         console.log(SectorsData,'befor save Data')
-// }
+//     CatModel.findByIdAndUpdate(id, data, {new: true}).then(record => {
+//         res.send(record);
+//     }).catch(err => {
+//         console.log(err)
+//         res.status(500).send(err.message);
+//     })

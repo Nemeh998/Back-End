@@ -5,9 +5,9 @@ const {mainsectorModel, admainModel} = require('../Models/Schemh')
 
 async function deletSectorsDataHendler(req, res) {
 
-    let sectorid = req.query.sectorid;
+    let sectorsId = req.query.sectorsId;
         let mainSectorid = req.query.mainSectorid;
-    console.log(sectorid, mainSectorid)
+    console.log(sectorsId, mainSectorid)
     
 
     mainsectorModel.findById(mainSectorid,(err,data)=>{
@@ -16,7 +16,7 @@ async function deletSectorsDataHendler(req, res) {
     }else{
         console.log(data,"data sector")
 
-   data.sectors.splice(sectorid,1)
+   data.sectors.splice(sectorsId,1)
 data.save()
 res.send(data.sectors)
     }

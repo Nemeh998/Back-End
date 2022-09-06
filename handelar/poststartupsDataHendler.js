@@ -7,6 +7,7 @@ const {mainsectorModel, admainModel} = require('../Models/Schemh')
 // maddleware to decode any request body to json
     console.log("data",req.body)
 console.log("data",req.query)
+console.log(req.query,"body")
 let{startupName ,
       LogoImage,
       city,
@@ -17,17 +18,17 @@ let{startupName ,
       emailAddress,
       Sectors,
       mainSectorName}=req.body
-console.log(Sectors)
+// console.log(Sectors)
 mainsectorModel.findById(mainSectorName,(err,data)=>{
     if(err){
         res.send(err)
     }else{
         console.log(data)
 
-data.sectors.map(sectoritem=>{
+data.sectors?.map(sectoritem=>{
 if(sectoritem._id.toString()===Sectors){
     console.log(sectoritem)
-    sectoritem.startup.push({
+    sectoritem.startup?.push({
                     startupName:startupName,
                     LogoImage:LogoImage,
                      city:city, 
@@ -35,7 +36,8 @@ if(sectoritem._id.toString()===Sectors){
                       numberOfEmployees:numberOfEmployees, 
                       yearOfEstablishment:yearOfEstablishment,
                        websiteURL:websiteURL,
-                        emailAddress:emailAddress
+                        emailAddress:emailAddress,
+                        approved: true
               
             })
     data.save()
@@ -50,16 +52,3 @@ if(sectoritem._id.toString()===Sectors){
 }
 
 module.exports=poststartupsDataHendler;
-// if(error){
-//     res.send('cant find sectors')
-// }
-// else{
-
-// if(Sectors)
-    // console.log(SectorsData,'befor save Data')
-    
-//         SectorsData[0].Sectors
-//          SectorsData[0].save();
-//         res.send(SectorsData[0].Sectors)
-//         console.log(SectorsData,'befor save Data')
-// }
