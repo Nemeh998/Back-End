@@ -1,8 +1,19 @@
 // شغال ع هاد البورت 
 // محجوز عليه 
 // اخر سلاش اسم داتا بيس
+
+
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+const server = express();
+// middleware
+server.use(express.json())
+server.use(cors());
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/comp')
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose.connect(`${MONGODB_URI}/comp`)
+// mongoose.connect('mongodb://localhost:27017/comp')
 
 
 
