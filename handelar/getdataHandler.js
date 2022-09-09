@@ -5,7 +5,7 @@ mainsectorModel.find({approved:true},function(error,mainSectordata){
     console.log(mainSectordata)
     if(error){
         console.log('error in getting data',error)
-    
+    res.states(400).json(error)
         } else{
             console.log(mainSectordata,"get data") 
     
