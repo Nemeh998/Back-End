@@ -14,7 +14,7 @@ const homeHandler = require('./handelar/homeHandler')
 server.get("/", homeHandler);
 const getdataHandlerAdmin = require('./handelar/getdataHandlerAdmin')
 server.get("/getdataHandlerAdmin", getdataHandlerAdmin);
-const getDataHendler = require('./handelar/getdataHandler');
+const getDataHendler = require('./handelar/getDataHendler');
 server.get("/getDataHendler", getDataHendler);
 const poststartupsDataHendler = require('./handelar/poststartupsDataHendler')
 server.post("/postDataHendler", poststartupsDataHendler)
