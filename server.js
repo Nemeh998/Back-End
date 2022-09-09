@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3002;
 // handler
 const homeHandler = require('./handelar/homeHandler')
 server.get("/", homeHandler);
-const getDataHendlerAdmin = require('./handelar/getdataHandlerAdmin')
-server.get("/getDataHendlerAdmin", getDataHendlerAdmin);
+const getdataHandlerAdmin = require('./handelar/getdataHandlerAdmin')
+server.get("/getdataHandlerAdmin", getdataHandlerAdmin);
 const getDataHendler = require('./handelar/getdataHandler');
 server.get("/getDataHendler", getDataHendler);
 const poststartupsDataHendler = require('./handelar/poststartupsDataHendler')
