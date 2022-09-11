@@ -8,7 +8,7 @@ const {mainsectorModel, admainModel} = require('../Models/Schemh')
   
 console.log(req.query,"body")
 let{startupName ,
-      LogoImage,
+    //   LogoImage,
       city,
       founderName,
       numberOfEmployees,
@@ -17,7 +17,7 @@ let{startupName ,
       emailAddress,
       Sectors,
       mainSectorName}=req.body
-// console.log(Sectors)
+console.log(LogoImage,startupName)
 mainsectorModel.findById(mainSectorName,(err,data)=>{
     if(err){
         res.send(err)

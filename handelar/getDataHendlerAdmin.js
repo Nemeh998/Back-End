@@ -1,6 +1,6 @@
 //localhost:5001/getDataHendler?email1=JORDAN MAP
 const {mainsectorModel,admainModel}=require('../Models/Schemh')
-function getdataHandlerAdmin (req,res){
+function getDataHendlerAdmin (req,res){
 mainsectorModel.find({approved:true},function(error,mainSectordata){
     console.log(mainSectordata)
     if(error){
@@ -26,4 +26,4 @@ mainsectorModel.find({approved:true},function(error,mainSectordata){
 }
 )
 }
-module.exports=getdataHandlerAdmin;
+module.exports=getDataHendlerAdmin;
